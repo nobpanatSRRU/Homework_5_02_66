@@ -59,3 +59,39 @@
 
         ?>
 ![index_construct_destruct](https://github.com/nobpanatSRRU/Homework_5_02_66/blob/main/images/Screenshot%202566-02-21%20at%2013.34.52.png?raw=true)
+#### index_Exception.php
+         <?php
+                  $number1 = 10;
+                  $number2 = 0;
+
+                  try{
+                      if($number2 == 0){
+                          throw new Exception("ห้ามหารด้วย 0 ");
+                  }
+                      $result = $number1 / $number2;
+                      echo "ผลหาร =" . $result;    
+                  }
+
+                  catch(Exception $e){
+                      echo $e->getMessage();
+                  }
+         ?>
+![index_Exception](https://github.com/nobpanatSRRU/Homework_5_02_66/blob/main/images/Screenshot%202566-02-21%20at%2013.34.45.png?raw=true)
+#### index_connection_SQL.php 
+         <?php
+
+                  $dsn = "mysql:host=localhost;dbname=mydb";
+                  $username = "root";
+                  $password = "";
+
+                  try{
+                      $connect = new PDO($dsn, $username, $password);
+                      echo "เชื่อมต่อฐานข้อมูลสำเร็จ";
+                  }
+
+                  catch(PDOException $e){
+                      echo "เชื่อมต่อล้มเหลว<br>" . $e->getMessage();
+                  }
+
+         ?>
+![index_connection_SQL](https://github.com/nobpanatSRRU/Homework_5_02_66/blob/main/images/Screenshot%202566-02-21%20at%2013.34.08.png?raw=true)
